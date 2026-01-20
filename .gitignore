@@ -1,0 +1,49 @@
+# Data directory - exclude all data files
+data/
+
+# Results and figures (optional - uncomment if you want to exclude)
+# results/
+# figures/
+
+# Logs
+logs/
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+*.egg-info/
+.eggs/
+dist/
+build/
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+
+# Virtual environments
+venv/
+env/
+.env
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Large files
+*.tif
+*.tiff
+*.nc
+*.hdf
+*.h5
+*.shp
+*.shx
+*.dbf
+*.prj
