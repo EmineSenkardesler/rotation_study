@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rotation Study - Research One-Pager</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.4;
+            color: #333;
+            background: #f5f5f5;
+            padding: 20px;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            padding: 30px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        header {
+            text-align: center;
+            border-bottom: 3px solid #2e7d32;
+            padding-bottom: 15px;
+            margin-bottom: 25px;
+        }
+        h1 {
+            color: #1b5e20;
+            font-size: 1.8em;
+            margin-bottom: 5px;
+        }
+        .subtitle {
+            color: #666;
+            font-size: 1em;
+        }
+        .grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+        .section {
+            background: #fafafa;
+            border-left: 4px solid #4caf50;
+            padding: 15px;
+            margin-bottom: 15px;
+        }
+        .section h2 {
+            color: #2e7d32;
+            font-size: 1.1em;
+            margin-bottom: 10px;
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 5px;
+        }
+        .full-width {
+            grid-column: 1 / -1;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.85em;
+            margin-top: 10px;
+        }
+        th, td {
+            padding: 8px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+        th {
+            background: #e8f5e9;
+            color: #1b5e20;
+            font-weight: 600;
+        }
+        tr:hover {
+            background: #f5f5f5;
+        }
+        .highlight {
+            background: #fff3e0;
+            border-left-color: #ff9800;
+        }
+        .methodology {
+            background: #e3f2fd;
+            border-left-color: #1976d2;
+        }
+        .results {
+            background: #fce4ec;
+            border-left-color: #c2185b;
+        }
+        ul {
+            padding-left: 20px;
+            font-size: 0.9em;
+        }
+        li {
+            margin-bottom: 5px;
+        }
+        .stat-box {
+            display: inline-block;
+            background: #e8f5e9;
+            padding: 5px 10px;
+            margin: 3px;
+            border-radius: 4px;
+            font-size: 0.85em;
+        }
+        .stat-box strong {
+            color: #1b5e20;
+        }
+        .framework-box {
+            background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%);
+            border: 2px solid #1976d2;
+            border-radius: 8px;
+            padding: 20px;
+            margin-top: 10px;
+        }
+        .framework-step {
+            display: flex;
+            align-items: center;
+            margin: 10px 0;
+        }
+        .step-num {
+            background: #1976d2;
+            color: white;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            margin-right: 15px;
+            flex-shrink: 0;
+        }
+        .arrow {
+            text-align: center;
+            color: #1976d2;
+            font-size: 1.5em;
+        }
+        footer {
+            text-align: center;
+            margin-top: 20px;
+            padding-top: 15px;
+            border-top: 1px solid #ddd;
+            color: #666;
+            font-size: 0.85em;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Crop Rotation Patterns in the US Corn Belt (2008-2024)</h1>
+            <p class="subtitle">A Bottom-Up Analysis Using Satellite Imagery and Markov Chain Modeling</p>
+            <div style="margin-top: 10px;">
+                <span class="stat-box"><strong>17 Years</strong> of Data</span>
+                <span class="stat-box"><strong>1.4 Billion</strong> Pixels</span>
+                <span class="stat-box"><strong>8 States</strong> Analyzed</span>
+                <span class="stat-box"><strong>310M</strong> Acres</span>
+            </div>
+        </header>
+
+        <div class="grid">
+            <!-- DATASETS SECTION -->
+            <div class="section">
+                <h2>Datasets</h2>
+                <table>
+                    <tr>
+                        <th>Dataset</th>
+                        <th>Source</th>
+                        <th>Purpose</th>
+                    </tr>
+                    <tr>
+                        <td><strong>Cropland Data Layer (CDL)</strong></td>
+                        <td>USDA NASS</td>
+                        <td>Crop classification at 30m resolution (2008-2024)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Insurance Records</strong></td>
+                        <td>USDA RMA</td>
+                        <td>Loss ratios, indemnities, premiums (434K records)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>gSSURGO NCCPI</strong></td>
+                        <td>USDA NRCS</td>
+                        <td>Soil productivity index (0-100 scale)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>County Boundaries</strong></td>
+                        <td>US Census TIGER</td>
+                        <td>Spatial aggregation (684 counties)</td>
+                    </tr>
+                </table>
+                <p style="font-size: 0.8em; margin-top: 10px; color: #666;">
+                    <strong>Crop Codes:</strong> Corn (1), Soybeans (5), Winter Wheat (24), Cotton (2), Double Crop W.Wheat/Soy (26)
+                </p>
+            </div>
+
+            <!-- DATA PROCESSING -->
+            <div class="section highlight">
+                <h2>Data Processing Pipeline</h2>
+                <ul>
+                    <li><strong>Transition Extraction:</strong> Year-to-year crop changes computed for each pixel</li>
+                    <li><strong>County Aggregation:</strong> 71,299 county-year records with crop areas</li>
+                    <li><strong>Memory-Efficient:</strong> Chunked processing (5,000-row windows)</li>
+                    <li><strong>CRS:</strong> EPSG:5070 (Albers Equal Area)</li>
+                    <li><strong>NCCPI Integration:</strong> 200K pixels with soil productivity data</li>
+                </ul>
+            </div>
+
+            <!-- METHODOLOGICAL FRAMEWORK - FULL WIDTH -->
+            <div class="section methodology full-width">
+                <h2>Methodological Framework</h2>
+                <div class="framework-box">
+                    <div class="framework-step">
+                        <div class="step-num">1</div>
+                        <div>
+                            <strong>Markov Chain Analysis</strong> - Model crop transitions as stochastic processes<br>
+                            <small>P(crop<sub>t</sub> | crop<sub>t-1</sub>) computed from pixel-level observations; higher-order chains (2nd/3rd) capture complex rotation cycles</small>
+                        </div>
+                    </div>
+                    <div class="arrow">&#8595;</div>
+                    <div class="framework-step">
+                        <div class="step-num">2</div>
+                        <div>
+                            <strong>Spatial Clustering</strong> - Identify distinct rotation regions<br>
+                            <small>K-means clustering on county features (crop shares, rotation patterns) reveals 4 distinct agricultural zones</small>
+                        </div>
+                    </div>
+                    <div class="arrow">&#8595;</div>
+                    <div class="framework-step">
+                        <div class="step-num">3</div>
+                        <div>
+                            <strong>Panel Fixed Effects Regression</strong> - Estimate causal effects<br>
+                            <small>Yield<sub>it</sub> = &beta;&middot;Rotation<sub>it</sub> + County<sub>FE</sub> + Year<sub>FE</sub> + &epsilon;<sub>it</sub></small>
+                        </div>
+                    </div>
+                    <div class="arrow">&#8595;</div>
+                    <div class="framework-step">
+                        <div class="step-num">4</div>
+                        <div>
+                            <strong>Interaction Analysis</strong> - Heterogeneous effects by soil quality<br>
+                            <small>Outcome<sub>it</sub> = &beta;<sub>1</sub>&middot;Rotation + &beta;<sub>2</sub>&middot;NCCPI + &beta;<sub>3</sub>&middot;(Rotation &times; NCCPI) + FE + &epsilon;</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- RESEARCH QUESTIONS -->
+            <div class="section">
+                <h2>Research Questions</h2>
+                <table>
+                    <tr>
+                        <th>RQ</th>
+                        <th>Question</th>
+                        <th>Method</th>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>Dominant rotation patterns?</td>
+                        <td>1st-order Markov</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>Complex 3-4 year cycles?</td>
+                        <td>Higher-order Markov</td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>Causal yield benefit?</td>
+                        <td>Panel regression</td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td>Insurance loss reduction?</td>
+                        <td>Panel regression</td>
+                    </tr>
+                    <tr>
+                        <td>5</td>
+                        <td>Temporal trend changes?</td>
+                        <td>Mann-Kendall, Chow test</td>
+                    </tr>
+                    <tr>
+                        <td>6</td>
+                        <td>Distinct spatial regions?</td>
+                        <td>K-means clustering</td>
+                    </tr>
+                    <tr>
+                        <td>7-9</td>
+                        <td>Soil productivity effects?</td>
+                        <td>Stratified analysis</td>
+                    </tr>
+                    <tr>
+                        <td>10</td>
+                        <td>Risk-rotation relationship?</td>
+                        <td>Cross-sectional + temporal</td>
+                    </tr>
+                </table>
+            </div>
+
+            <!-- EXPECTED/KEY RESULTS -->
+            <div class="section results">
+                <h2>Key Findings & Expected Results</h2>
+                <ul>
+                    <li><strong>Dominant Pattern:</strong> Corn-Soybean rotation dominates (~71% of corn rotates annually)
+                        <ul style="margin-top: 5px;">
+                            <li>Corn &rarr; Soybean: 63.2%</li>
+                            <li>Soybean &rarr; Corn: 76.4%</li>
+                        </ul>
+                    </li>
+                    <li><strong>Yield Benefit:</strong> +4.69 bu/acre overall; effect <em>declining</em> over time (7.22 early &rarr; -1.49 recent)</li>
+                    <li><strong>Insurance Benefit:</strong> -4.8% loss ratio for corn after soybean (p &lt; 0.0001)</li>
+                    <li><strong>Temporal Trend:</strong> Rotation adoption <em>increasing</em> (+7.2% since 2008); continuous corn declining</li>
+                    <li><strong>Spatial Clusters:</strong> 4 distinct regions identified (Balanced C-S, Wheat-Mixed, Corn-Dominant, Strong Rotation)</li>
+                    <li><strong>Soil Interaction:</strong> Rotation benefits larger on marginal soils; high-NCCPI soils favor continuous corn</li>
+                    <li><strong>Risk Paradox:</strong> High-risk counties rotate <em>less</em> (r = -0.48); no adaptive response to losses</li>
+                </ul>
+            </div>
+
+            <!-- STUDY AREA & SCALE -->
+            <div class="section full-width">
+                <h2>Study Area & Scale</h2>
+                <div style="display: flex; gap: 30px; flex-wrap: wrap;">
+                    <div style="flex: 1; min-width: 200px;">
+                        <strong>8 Corn Belt States:</strong>
+                        <ul style="columns: 2; margin-top: 5px;">
+                            <li>Iowa</li>
+                            <li>Illinois</li>
+                            <li>Indiana</li>
+                            <li>Nebraska</li>
+                            <li>Minnesota</li>
+                            <li>Ohio</li>
+                            <li>Wisconsin</li>
+                            <li>South Dakota</li>
+                        </ul>
+                    </div>
+                    <div style="flex: 1; min-width: 200px;">
+                        <strong>Analysis Scales:</strong>
+                        <ul style="margin-top: 5px;">
+                            <li><strong>Pixel:</strong> 30m &times; 30m (~0.22 acres)</li>
+                            <li><strong>County:</strong> 684 counties aggregated</li>
+                            <li><strong>State:</strong> 8-state regional analysis</li>
+                            <li><strong>Temporal:</strong> 17 years (2008-2024)</li>
+                        </ul>
+                    </div>
+                    <div style="flex: 1; min-width: 200px;">
+                        <strong>Outputs:</strong>
+                        <ul style="margin-top: 5px;">
+                            <li>23 publication-ready figures</li>
+                            <li>Transition probability matrices</li>
+                            <li>Panel regression estimates</li>
+                            <li>19-page academic manuscript</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <footer>
+            <strong>Rotation Study</strong> | Bottom-Up Analysis of Crop Rotation in the US Corn Belt<br>
+            Data Sources: USDA NASS (CDL), USDA RMA (Insurance), USDA NRCS (gSSURGO)<br>
+            <em>Study Period: 2008-2024 | Resolution: 30m | Generated: February 2026</em>
+        </footer>
+    </div>
+</body>
+</html>
