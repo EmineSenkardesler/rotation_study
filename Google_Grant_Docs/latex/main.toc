@@ -1,0 +1,60 @@
+\contentsline {section}{\numberline {1}Organization and Submitter Info (Q1--Q10)}{3}{section.1}%
+\contentsline {subsection}{\numberline {1.1}Q3. Organization Classification}{3}{subsection.1.1}%
+\contentsline {subsection}{\numberline {1.2}Q10. English Fluency Confirmation}{3}{subsection.1.2}%
+\contentsline {section}{\numberline {2}Impact (Q11--Q19)}{3}{section.2}%
+\contentsline {subsection}{\numberline {2.1}Q11. Project Name}{3}{subsection.2.1}%
+\contentsline {subsection}{\numberline {2.2}Q12. Topic(s) --- Select all that apply}{3}{subsection.2.2}%
+\contentsline {subsection}{\numberline {2.3}Q13. Open-source output(s) --- Select all that apply}{3}{subsection.2.3}%
+\contentsline {subsection}{\numberline {2.4}Q14. Geographic Regions}{3}{subsection.2.4}%
+\contentsline {subsection}{\numberline {2.5}Q15. Project's Current Stage}{3}{subsection.2.5}%
+\contentsline {subsection}{\numberline {2.6}Q16. Problem Statement}{4}{subsection.2.6}%
+\contentsline {subsubsection}{\numberline {2.6.1}Q16a. The problem this project is trying to tackle is\dots }{4}{subsubsection.2.6.1}%
+\contentsline {subsubsection}{\numberline {2.6.2}Q16b. The challenge is significant because\dots }{4}{subsubsection.2.6.2}%
+\contentsline {subsubsection}{\numberline {2.6.3}Q16c. The questions we seek to answer\dots }{4}{subsubsection.2.6.3}%
+\contentsline {subsection}{\numberline {2.7}Q17. Proposed Solution}{4}{subsection.2.7}%
+\contentsline {subsubsection}{\numberline {2.7.1}Q17a. The solution we are proposing is\dots }{4}{subsubsection.2.7.1}%
+\contentsline {subsubsection}{\numberline {2.7.2}Q17b. The tools, methods, or techniques we are planning to use are\dots }{4}{subsubsection.2.7.2}%
+\contentsline {subsubsection}{\numberline {2.7.3}Q17c. The evidence we have that our solution would solve this problem is\dots }{5}{subsubsection.2.7.3}%
+\contentsline {subsubsection}{\numberline {2.7.4}Q17d. Our use of AI will catalyze new scientific inquiry by\dots }{5}{subsubsection.2.7.4}%
+\contentsline {subsection}{\numberline {2.8}Q18. End Beneficiaries}{5}{subsection.2.8}%
+\contentsline {subsubsection}{\numberline {2.8.1}Q18a. The end beneficiary group(s) we hope to support are\dots }{5}{subsubsection.2.8.1}%
+\contentsline {subsubsection}{\numberline {2.8.2}Q18b. To gather and incorporate feedback, our project will\dots }{5}{subsubsection.2.8.2}%
+\contentsline {subsubsection}{\numberline {2.8.3}Q18c. The potential reach is\dots }{5}{subsubsection.2.8.3}%
+\contentsline {subsection}{\numberline {2.9}Q19. Expected Outcomes}{5}{subsection.2.9}%
+\contentsline {subsubsection}{\numberline {2.9.1}Q19a. The specific metrics we'd use to assess real-world impact are\dots }{6}{subsubsection.2.9.1}%
+\contentsline {subsubsection}{\numberline {2.9.2}Q19b. Signals that would demonstrate our solution is failing\dots }{6}{subsubsection.2.9.2}%
+\contentsline {subsubsection}{\numberline {2.9.3}Q19c. The changes from baseline we'd expect to see are\dots }{6}{subsubsection.2.9.3}%
+\contentsline {section}{\numberline {3}Innovative Use of Technology (Q20--Q25)}{6}{section.3}%
+\contentsline {subsection}{\numberline {3.1}Q20. Existing technologies and their roles}{6}{subsection.3.1}%
+\contentsline {subsection}{\numberline {3.2}Q21. Why a new, custom-developed solution is necessary}{7}{subsection.3.2}%
+\contentsline {subsection}{\numberline {3.3}Q22. Existing Dataset}{7}{subsection.3.3}%
+\contentsline {subsubsection}{\numberline {3.3.1}Q22a. Critical datasets}{7}{subsubsection.3.3.1}%
+\contentsline {subsection}{\numberline {3.4}Q23. Ethical risks and alignment with Google's AI Principles}{7}{subsection.3.4}%
+\contentsline {subsection}{\numberline {3.5}Q24. Open Source Commitment}{8}{subsection.3.5}%
+\contentsline {subsection}{\numberline {3.6}Q25. How you'd leverage Google's technical support}{8}{subsection.3.6}%
+\contentsline {section}{\numberline {4}Feasibility (Q26--Q31)}{8}{section.4}%
+\contentsline {subsection}{\numberline {4.1}Q26. Why your organization is uniquely positioned}{8}{subsection.4.1}%
+\contentsline {subsection}{\numberline {4.2}Q27. AI Maturity}{8}{subsection.4.2}%
+\contentsline {subsection}{\numberline {4.3}Q28. Technical feasibility evidence}{9}{subsection.4.3}%
+\contentsline {subsection}{\numberline {4.4}Q29. Potential risks and mitigation strategies}{9}{subsection.4.4}%
+\contentsline {subsection}{\numberline {4.5}Q30. Key team members (3--5)}{9}{subsection.4.5}%
+\contentsline {subsection}{\numberline {4.6}Q31. Partner organizations}{10}{subsection.4.6}%
+\contentsline {section}{\numberline {5}Scalability (Q32--Q36)}{10}{section.5}%
+\contentsline {subsection}{\numberline {5.1}Q32. How your solution scales --- Select all that apply}{10}{subsection.5.1}%
+\contentsline {subsection}{\numberline {5.2}Q33. Team structure evolution for scale}{11}{subsection.5.2}%
+\contentsline {subsection}{\numberline {5.3}Q34. Sustainability beyond Google.org support}{11}{subsection.5.3}%
+\contentsline {subsubsection}{\numberline {5.3.1}Q34a. Financial sustainability}{11}{subsubsection.5.3.1}%
+\contentsline {subsubsection}{\numberline {5.3.2}Q34b. Technical sustainability}{11}{subsubsection.5.3.2}%
+\contentsline {subsection}{\numberline {5.4}Q35. Key learnings and knowledge sharing}{11}{subsection.5.4}%
+\contentsline {subsection}{\numberline {5.5}Q36. Public presence and project visibility}{12}{subsection.5.5}%
+\contentsline {section}{\numberline {6}Budget and Timeline (Q37--Q47)}{12}{section.6}%
+\contentsline {subsection}{\numberline {6.1}Q37. Funding Request}{12}{subsection.6.1}%
+\contentsline {subsection}{\numberline {6.2}Budget Breakdown}{12}{subsection.6.2}%
+\contentsline {subsection}{\numberline {6.3}Project Timeline and Milestones}{13}{subsection.6.3}%
+\contentsline {subsubsection}{\numberline {6.3.1}Q43. Milestone 1 --- Months 1--9: Data Integration \& AI Models}{13}{subsubsection.6.3.1}%
+\contentsline {subsubsection}{\numberline {6.3.2}Q44. Milestone 2 --- Months 10--18: ABM Development \& Calibration}{14}{subsubsection.6.3.2}%
+\contentsline {subsubsection}{\numberline {6.3.3}Q45. Milestone 3 --- Months 19--27: Scenario Experiments}{14}{subsubsection.6.3.3}%
+\contentsline {subsubsection}{\numberline {6.3.4}Q46. Milestone 4 --- Months 28--36: Transferability \& Completion}{15}{subsubsection.6.3.4}%
+\contentsline {section}{\numberline {7}Ethics and Compliance (Q48--Q53)}{15}{section.7}%
+\contentsline {subsection}{\numberline {7.1}Q53. Explanation (if Q49/Q50 = Yes)}{15}{subsection.7.1}%
+\contentsline {section}{Appendix: Key Statistics}{16}{subsection.7.1}%

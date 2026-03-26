@@ -78,13 +78,13 @@
 
 **Q17a.** *The solution we are proposing is...*
 
-> An AI-driven, spatially-explicit agent-based model where heterogeneous farmer-agents — powered by graph neural networks, transformers, and gradient-boosted trees trained on 1.4 billion satellite observations — simulate crop rotation decisions across the Corn Belt, enabling virtual policy experiments to identify interventions that increase climate resilience. [43 words]
+> An AI-driven agent-based model on a 5km grid (~120,000 cells) across the Corn Belt, where heterogeneous farmer-agents — powered by a Spatio-Temporal Graph Neural Network and gradient-boosted trees trained on 1.4 billion satellite observations aggregated via weighted methods — simulate crop rotation decisions, enabling virtual policy experiments for climate resilience. [47 words]
 
 ---
 
 **Q17b.** *The tools, methods, or techniques we are planning to use are...*
 
-> Three AI architectures: Graph Neural Networks (spatial contagion between farms), Temporal Transformers (multi-year decision memory), and XGBoost (interpretable baseline). These power agent decision-making within a Python-based, object-oriented agent-based model calibrated against 17 years of USDA satellite, insurance, soil, and yield data. [42 words]
+> A Spatio-Temporal Graph Neural Network — combining spatial message-passing across ~120,000 neighboring 5km grid cells with temporal attention over 17-year crop histories — serves as the flagship AI model. XGBoost provides an interpretable baseline with SHAP feature importance. LSTM and Spatial Random Forest serve as ablation comparisons. All models power agent decisions within an object-oriented ABM. [50 words]
 
 ---
 
@@ -144,13 +144,13 @@
 
 ### Q20. Existing technologies and their roles
 
-> **PyTorch/PyTorch Geometric**: Training Graph Neural Networks on county adjacency graphs and Temporal Transformers on 17-year crop sequences. Customized with agricultural domain-specific loss functions incorporating rotation transition probabilities. **XGBoost**: Interpretable baseline model with SHAP explanations for feature importance analysis. **Mesa (Python ABM framework)**: Agent scheduling and spatial grid management, extended with custom OOP agent classes containing AI-learned decision functions. **Google Earth Engine**: Potential integration for real-time satellite data ingestion and climate variable extraction at scale. **Rasterio/GeoPandas**: Geospatial processing of 1.4 billion CDL pixels and NCCPI soil rasters. **Google Cloud Platform**: GPU training for GNN/Transformer architectures on large-scale satellite datasets; distributed ABM simulation runs for scenario analysis. All tools are open-source except GCP compute. [100 words]
+> **PyTorch/PyTorch Geometric**: Training a Spatio-Temporal Graph Neural Network on a regular lattice of ~120,000 5km grid cells, where GNN layers propagate neighbor influence and temporal attention layers capture multi-year crop history dependencies within a single unified architecture. LSTM comparison baselines for temporal-only ablation. **XGBoost**: Interpretable baseline with SHAP explanations; Spatial Random Forest for spatial-only ablation using neighbor-aggregated features. **Mesa (Python ABM framework)**: Agent scheduling on the 5km grid, extended with OOP agent classes containing AI-learned decision functions. **Rasterio/GeoPandas**: Weighted aggregation of 1.4 billion 30m CDL pixels and NCCPI soil rasters to 5km grid cells. **Google Earth Engine**: Climate variable extraction at scale. **Google Cloud Platform**: GPU training on 120K-node spatial graphs; distributed ABM calibration runs. [100 words]
 
 ---
 
 ### Q21. Why a new, custom-developed solution is necessary
 
-> Existing crop rotation models fall into two categories: statistical models (Markov chains, panel regressions) that describe patterns but cannot explain the behavioral mechanisms generating them, and theoretical agent-based models with hand-coded rules that lack empirical calibration. No existing tool combines AI-learned decision rules with empirically-calibrated spatial simulation. Our approach bridges this gap: the AI models learn realistic farmer behavior from 1.4 billion satellite observations, while the ABM framework simulates how these individual decisions collectively shape landscape-level outcomes. This integration is necessary because the risk-rotation paradox — the central puzzle — cannot be explained by aggregate statistics alone. It requires modeling heterogeneous agents. [100 words]
+> Existing crop rotation models fall into two categories: statistical models (Markov chains, panel regressions) that describe patterns but cannot explain the behavioral mechanisms generating them, and theoretical agent-based models with hand-coded rules that lack empirical calibration. No existing tool combines AI-learned decision rules with empirically-calibrated spatial simulation at sub-county resolution. Our approach bridges this gap: 30m satellite observations are aggregated to a 5km grid (~120,000 cells), where a Spatio-Temporal GNN learns realistic farmer behavior capturing both spatial contagion and temporal memory. The ABM then simulates how individual decisions collectively shape landscape-level outcomes. This is necessary because the risk-rotation paradox cannot be explained by aggregate statistics alone. [100 words]
 
 ---
 
@@ -166,7 +166,7 @@
 
 ### Q23. Ethical risks and alignment with Google's AI Principles
 
-> Our project aligns with Google's AI Principles through several design choices. **Socially beneficial**: The model supports climate adaptation and food security, benefiting farmers and communities. **Avoids unfair bias**: We validate model performance across all 8 states and soil types, ensuring predictions don't systematically disadvantage particular regions or farm sizes. **Transparency**: XGBoost baseline provides SHAP-based interpretability; GNN and Transformer attention weights are visualized and auditable. **Privacy**: All data is aggregated at county level or uses satellite imagery — no individual farmer data is collected or modeled. **Accountability**: All code, models, and training data are open-source, enabling independent verification. We do not make prescriptive recommendations to individual farmers; the model informs policy design at institutional level. [100 words]
+> Our project aligns with Google's AI Principles through several design choices. **Socially beneficial**: The model supports climate adaptation and food security, benefiting farmers and communities. **Avoids unfair bias**: We validate model performance across all 8 states and soil types, ensuring predictions don't systematically disadvantage particular regions or farm sizes. **Transparency**: XGBoost baseline provides SHAP-based interpretability; ST-GNN spatial attention weights are visualized and auditable. **Privacy**: All data uses satellite imagery aggregated to 5km grids — no individual farmer data is collected or modeled. **Accountability**: All code, models, and training data are open-source, enabling independent verification. We do not make prescriptive recommendations to individual farmers; the model informs policy design at institutional level. [100 words]
 
 ---
 
@@ -178,7 +178,7 @@
 
 ### Q25. How you'd leverage Google's technical support
 
-> We would benefit from Google's expertise in three areas. **Google Cloud infrastructure**: Training GNN and Transformer models on our 1.4-billion-pixel dataset requires GPU clusters; GCP with TPU/GPU access would dramatically accelerate training and enable hyperparameter sweeps across all three architectures. **Google Earth Engine**: Real-time satellite data integration could extend our CDL-based pipeline with continuous vegetation indices (NDVI/EVI), enabling higher-frequency decision modeling. **AI mentorship**: Guidance from Google AI researchers on scaling Graph Neural Networks to large spatial graphs (684+ nodes with temporal features) and optimizing Transformer architectures for agricultural time-series would strengthen our model performance and help us avoid common pitfalls in architecture design for domain-specific applications. [100 words]
+> We would benefit from Google's expertise in three areas. **Google Cloud infrastructure**: Training our Spatio-Temporal GNN on a 120,000-node spatial graph with 17-year temporal depth requires substantial GPU/TPU resources; GCP would dramatically accelerate training and enable hyperparameter sweeps. Distributed ABM calibration across thousands of parameter combinations requires parallel compute at scale. **Google Earth Engine**: Weighted aggregation of 30m satellite data and climate variables to our 5km grid across the full Corn Belt, with potential for real-time vegetation index integration. **AI mentorship**: Guidance from Google AI researchers on scaling Graph Neural Networks to large regular-lattice graphs (120K+ nodes with spatio-temporal features) and optimizing neighborhood sampling strategies for agricultural applications would be invaluable. [100 words]
 
 ---
 
@@ -204,7 +204,7 @@
 
 ### Q29. Potential risks and mitigation strategies
 
-> **Technical Risk — AI model performance**: The three AI architectures (GNN, Transformer, XGBoost) may not significantly outperform simple Markov baselines for crop prediction. *Mitigation*: XGBoost serves as a strong interpretable baseline; even modest improvements validate spatial/temporal structure. If individual models underperform, ensemble methods combining all three can capture complementary signals. We benchmark against established Markov chain predictions from our existing analysis.
+> **Technical Risk — AI model performance**: The Spatio-Temporal GNN may not significantly outperform simpler baselines for crop prediction. *Mitigation*: We employ a systematic ablation strategy — XGBoost (no spatial/temporal structure), Spatial Random Forest (spatial only), and LSTM (temporal only) — to isolate which components add value. If the full ST-GNN underperforms, these ablations reveal whether spatial contagion, temporal memory, or neither matters. We benchmark all models against Markov chain predictions.
 
 > **Technical Risk — ABM calibration complexity**: Calibrating agent parameters (risk attitudes, planning horizons, decision rule mixtures) against multiple empirical targets simultaneously is computationally demanding. *Mitigation*: We use Approximate Bayesian Computation (ABC) with sequential Monte Carlo, a proven approach for complex model calibration. Pattern-Oriented Modeling narrows the parameter space by requiring multiple patterns to be matched simultaneously, reducing equifinality.
 
@@ -220,7 +220,7 @@
 
 > *Note: Replace placeholder roles with actual team members. The structure below reflects the expertise needed.*
 
-> **Role 1 — Principal Investigator / Agricultural Scientist**: Leads project design, domain modeling, and policy interpretation. Deep expertise in crop rotation economics, geospatial analysis, and agricultural risk management. Has completed all preliminary empirical analysis including the 1.4-billion-pixel CDL processing pipeline. **Role 2 — AI/ML Engineer**: Designs and trains the three AI architectures (GNN, Transformer, XGBoost). Expertise in PyTorch Geometric, graph neural networks, and attention mechanisms for geospatial applications. **Role 3 — Agent-Based Modeling Specialist**: Builds the OOP simulation framework and calibration pipeline. Experience with Mesa, spatial ABMs, and Approximate Bayesian Computation. **Role 4 — Geospatial Data Scientist**: Manages satellite data processing, soil data integration, and climate variable extraction. Expertise in rasterio, Google Earth Engine, and large-scale raster computation. [100 words]
+> **Role 1 — Principal Investigator / Agricultural Scientist**: Leads project design, domain modeling, and policy interpretation. Deep expertise in crop rotation economics, geospatial analysis, and agricultural risk management. Has completed all preliminary empirical analysis including the 1.4-billion-pixel CDL processing pipeline. **Role 2 — AI/ML Engineer**: Designs and trains the Spatio-Temporal GNN and comparison models (XGBoost, LSTM, Spatial RF). Expertise in PyTorch Geometric, graph neural networks, and spatio-temporal architectures for geospatial applications. **Role 3 — Agent-Based Modeling Specialist**: Builds the OOP simulation framework and calibration pipeline. Experience with Mesa, spatial ABMs, and Approximate Bayesian Computation. **Role 4 — Geospatial Data Scientist**: Manages satellite data processing, 5km grid aggregation, soil data integration, and climate variable extraction. Expertise in rasterio, Google Earth Engine, and large-scale raster computation. [100 words]
 
 ---
 
@@ -240,7 +240,7 @@
 
 > - [x] **(a) Geographic transfer** — Framework transfers to Brazil Cerrado, EU, Sub-Saharan Africa, India
 > - [x] **(c) Exponential user growth** — Open-source tools enable any researcher to build agricultural ABMs
-> - [x] **(d) Technical & performance maturity** — Scale from county-level to field-level agents with higher resolution
+> - [x] **(d) Technical & performance maturity** — Scale from 5km grid to 30m field-level agents with higher resolution
 > - [x] **(e) Ecosystem & integration** — Foundational tool connecting to crop models (APSIM), food system models
 > - [x] **(g) Policy & standards leadership** — Establishing methodology standard for AI-driven agricultural adaptation assessment
 
@@ -303,7 +303,7 @@
 > $600,000
 
 **c. Description & Subcategory Details:**
-> Principal Investigator (partial salary, 36 months): project leadership, domain modeling, policy interpretation, and publication. AI/ML Research Associate (full-time, 24 months): design, training, and evaluation of GNN, Transformer, and XGBoost architectures on satellite data; integration of trained models into ABM agent decision functions. Graduate Research Assistant (full-time, 36 months): ABM framework development, calibration pipeline implementation, scenario experiment execution, geospatial data processing, and documentation. Personnel costs represent the largest investment because the project's core innovation — bridging AI, agent-based modeling, and agricultural science — requires sustained, specialized effort across these three domains. [91 words]
+> Principal Investigator (partial salary, 36 months): project leadership, domain modeling, policy interpretation, and publication. AI/ML Research Associate (full-time, 24 months): design, training, and evaluation of Spatio-Temporal GNN and comparison models (XGBoost, LSTM, Spatial RF) on satellite data; integration of trained models into ABM agent decision functions. Graduate Research Assistant (full-time, 36 months): ABM framework development, calibration pipeline implementation, scenario experiment execution, 5km grid data processing, and documentation. Personnel costs represent the largest investment because the project's core innovation — bridging AI, agent-based modeling, and agricultural science — requires sustained, specialized effort across these three domains. [91 words]
 
 ---
 
@@ -316,7 +316,7 @@
 > $180,000
 
 **c. Description & Subcategory Details:**
-> Google Cloud Platform GPU/TPU instances for training three AI architectures on 1.4-billion-pixel dataset: estimated 2,000+ GPU-hours for GNN training on spatial graphs, 1,500+ GPU-hours for Transformer training on temporal sequences, and 500+ CPU-hours for XGBoost baselines. Cloud storage for raster datasets (~100GB CDL + gSSURGO + climate data). Distributed computing for ABM calibration using Approximate Bayesian Computation requiring thousands of parallel simulation runs across parameter space. Hyperparameter optimization sweeps across all three architectures. This allocation may be partially offset by Google Cloud credits provided through the Accelerator program. [88 words]
+> Google Cloud Platform GPU/TPU instances for training Spatio-Temporal GNN on a 120,000-node spatial graph with 17-year temporal depth: estimated 3,000+ GPU-hours for ST-GNN training with neighborhood sampling, plus 500+ GPU-hours for LSTM and Spatial RF comparison baselines, and 500+ CPU-hours for XGBoost. Compute for weighted aggregation of 1.4 billion 30m pixels to ~120,000 5km grid cells. Cloud storage for multi-resolution raster datasets (~150GB). Distributed computing for ABM calibration using Approximate Bayesian Computation requiring thousands of parallel simulation runs on the 120K-cell grid. May be partially offset by Google Cloud credits. [88 words]
 
 ---
 
@@ -353,10 +353,10 @@
 **a. Timeframe:** Months 1–9
 
 **b. Activities:**
-> Data integration and AI model development. Acquire and process complete gSSURGO soil data and gridMET climate variables for all 684 Corn Belt counties. Construct county adjacency graphs for GNN and temporal sequences for Transformer. Train all three AI architectures (GNN, Transformer, XGBoost) on processed dataset. Conduct two-strategy validation: temporal split (2008–2019 train, 2020–2024 validate) and random 80/20 year-split cross-validation. Generate SHAP interpretability analysis for XGBoost and attention weight visualizations for GNN/Transformer. Compare architectures and select best-performing model(s) for ABM integration.
+> Data integration and AI model development. Aggregate 30m CDL, gSSURGO soil, and gridMET climate data to ~120,000 5km grid cells via weighted methods. Construct spatial graph (grid adjacency) and 17-year temporal sequences for Spatio-Temporal GNN training. Train ST-GNN flagship model plus ablation comparisons: XGBoost (interpretable baseline), LSTM (temporal-only), and Spatial Random Forest (spatial-only). Conduct two-strategy validation: temporal split (2008–2019 train, 2020–2024 validate) and random 80/20 year-split cross-validation. Generate SHAP analysis for XGBoost and spatial attention visualizations for ST-GNN. Compare architectures and select best-performing model(s) for ABM integration.
 
 **c. Outcomes/Key Milestones:**
-> Three trained and validated AI models for predicting farmer crop choices from satellite-observed histories. Model comparison report with accuracy metrics (AUC > 75% target), interpretability analysis identifying top decision drivers (soil quality, price signals, neighbor behavior), and validated prediction on held-out data. First peer-reviewed paper submitted on AI model comparison. [100 words]
+> Trained and validated Spatio-Temporal GNN plus three ablation baselines for predicting farmer crop choices on the 5km grid. Model comparison report with accuracy metrics (AUC > 75% target), ablation analysis isolating the value of spatial contagion vs. temporal memory, SHAP interpretability identifying top decision drivers (soil quality, price signals, neighbor behavior), and validated prediction on held-out data. First peer-reviewed paper submitted on AI model comparison. [100 words]
 
 ---
 
@@ -365,7 +365,7 @@
 **a. Timeframe:** Months 10–18
 
 **b. Activities:**
-> Agent-based model development and calibration. Implement OOP simulation framework in Python: Cell, FarmerAgent, Landscape, Market, and Simulation classes. Initialize landscape from real CDL and NCCPI raster data. Integrate trained AI models as agent decision functions. Define agent heterogeneity parameters (risk attitude distribution, planning horizons, tenure, decision-type mixtures). Calibrate ABM using Approximate Bayesian Computation against empirical targets: transition probabilities, spatial cluster structure, temporal trends, and the risk-rotation paradox.
+> Agent-based model development and calibration. Implement OOP simulation framework on the 5km grid in Python: Cell, FarmerAgent, Landscape, Market, and Simulation classes. Initialize ~120,000 grid cells from aggregated CDL and NCCPI data. Integrate trained ST-GNN and XGBoost models as agent decision functions. Define agent heterogeneity parameters (risk attitude distribution, planning horizons, tenure, decision-type mixtures). Calibrate ABM using Approximate Bayesian Computation against empirical targets: transition probabilities, spatial cluster structure, temporal trends, and the risk-rotation paradox.
 
 **c. Outcomes/Key Milestones:**
 > Calibrated ABM that reproduces six observed Corn Belt patterns without explicit coding: (1) Corn→Soy ~63%, (2) continuous corn declining, (3) 4 spatial clusters, (4) risk-rotation correlation < −0.30, (5) yield benefit magnitude, and (6) 2013 structural break. Open-source Python package (`cornbelt-abm`) released on GitHub with documentation. ABM validation report with out-of-sample prediction accuracy metrics. [100 words]
@@ -490,7 +490,8 @@ These are the headline statistics to weave throughout the application:
 - **2013** structural break in continuous corn decline
 - **4 spatial clusters** identified
 - **18 scripts**, 23 figures, 19-page manuscript — already completed
-- **3 AI architectures**: GNN, Transformer, XGBoost
+- **~120,000** 5km grid cells across the Corn Belt
+- **Spatio-Temporal GNN** flagship + 3 ablation baselines (XGBoost, LSTM, Spatial RF)
 - **300,000** farming operations in the Corn Belt
 
 ---

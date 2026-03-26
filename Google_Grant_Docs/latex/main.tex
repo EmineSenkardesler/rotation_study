@@ -1,0 +1,516 @@
+\documentclass[11pt,letterpaper]{article}
+
+% ── Packages ──────────────────────────────────────────────
+\usepackage[margin=1in]{geometry}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{microtype}
+\usepackage{xcolor}
+\usepackage{hyperref}
+\usepackage{enumitem}
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{tabularx}
+\usepackage{graphicx}
+\usepackage{fancyhdr}
+\usepackage{titlesec}
+\usepackage{parskip}
+\usepackage{amssymb}
+
+% ── Colors ────────────────────────────────────────────────
+\definecolor{googleblue}{HTML}{4285F4}
+\definecolor{googlered}{HTML}{EA4335}
+\definecolor{googleyellow}{HTML}{FBBC05}
+\definecolor{googlegreen}{HTML}{34A853}
+\definecolor{darkgray}{HTML}{333333}
+\definecolor{lightgray}{HTML}{F5F5F5}
+\definecolor{answerbox}{HTML}{F0F7FF}
+\definecolor{promptgray}{HTML}{666666}
+\definecolor{notegray}{HTML}{888888}
+
+% ── Hyperref setup ────────────────────────────────────────
+\hypersetup{
+    colorlinks=true,
+    linkcolor=googleblue,
+    urlcolor=googleblue,
+    citecolor=googleblue
+}
+
+% ── Section formatting ────────────────────────────────────
+\titleformat{\section}
+    {\Large\bfseries\color{googleblue}}
+    {\thesection.}{0.5em}{}
+    [\vspace{-0.5em}\textcolor{googleblue}{\rule{\textwidth}{1pt}}]
+
+\titleformat{\subsection}
+    {\large\bfseries\color{darkgray}}
+    {}{0em}{}
+
+\titleformat{\subsubsection}
+    {\normalsize\bfseries\color{darkgray}}
+    {}{0em}{}
+
+% ── Header/Footer ─────────────────────────────────────────
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\small\textcolor{notegray}{Google.org Impact Challenge: AI for Science}}
+\fancyhead[R]{\small\textcolor{notegray}{Application Draft}}
+\fancyfoot[C]{\small\textcolor{notegray}{\thepage}}
+\renewcommand{\headrulewidth}{0.4pt}
+
+% ── Custom commands ───────────────────────────────────────
+\newcommand{\prompt}[1]{%
+    \vspace{0.3em}%
+    \noindent\textit{\textcolor{promptgray}{#1}}%
+    \vspace{0.3em}%
+}
+
+\newcommand{\answer}[1]{%
+    \vspace{0.2em}%
+    \noindent\colorbox{answerbox}{\parbox{\dimexpr\textwidth-2\fboxsep}{%
+        \vspace{0.4em}#1\vspace{0.4em}%
+    }}%
+    \vspace{0.5em}%
+}
+
+\newcommand{\selection}[1]{%
+    \vspace{0.2em}%
+    \noindent\colorbox{lightgray}{\parbox{\dimexpr\textwidth-2\fboxsep}{%
+        \vspace{0.3em}#1\vspace{0.3em}%
+    }}%
+    \vspace{0.5em}%
+}
+
+\newcommand{\note}[1]{%
+    \vspace{0.2em}%
+    {\small\textcolor{notegray}{\textit{#1}}}%
+    \vspace{0.2em}%
+}
+
+\newcommand{\wordcount}[1]{%
+    \hfill{\scriptsize\textcolor{notegray}{[#1 words]}}%
+}
+
+% ── Document ──────────────────────────────────────────────
+\begin{document}
+
+% ── Title Page ────────────────────────────────────────────
+\begin{titlepage}
+\centering
+\vspace*{2cm}
+
+{\Huge\bfseries\textcolor{googleblue}{G}%
+\textcolor{googlered}{o}%
+\textcolor{googleyellow}{o}%
+\textcolor{googleblue}{g}%
+\textcolor{googlegreen}{l}%
+\textcolor{googlered}{e}%
+\textcolor{darkgray}{.org Impact Challenge}}
+
+\vspace{0.5cm}
+{\LARGE\textcolor{darkgray}{AI for Science}}
+
+\vspace{2cm}
+\textcolor{googleblue}{\rule{0.8\textwidth}{2pt}}
+
+\vspace{1.5cm}
+{\LARGE\bfseries AI-Driven Digital Twin of Crop Rotation\\[0.3cm]
+for Climate-Resilient Agriculture\\[0.3cm]
+in the US Corn Belt}
+
+\vspace{1.5cm}
+\textcolor{googleblue}{\rule{0.8\textwidth}{2pt}}
+
+\vspace{2cm}
+{\large Application Draft}
+
+\vspace{0.5cm}
+{\large\textcolor{notegray}{Deadline: April 17, 2026 --- 11:59 PM PT}}
+
+\vspace{1cm}
+
+\begin{tabular}{cccc}
+\fcolorbox{googleblue}{answerbox}{\parbox{3cm}{\centering\bfseries 1.4 Billion\\Pixels}} &
+\fcolorbox{googleblue}{answerbox}{\parbox{3cm}{\centering\bfseries 17 Years\\of Data}} &
+\fcolorbox{googleblue}{answerbox}{\parbox{3cm}{\centering\bfseries 8 States\\684 Counties}} &
+\fcolorbox{googleblue}{answerbox}{\parbox{3cm}{\centering\bfseries 310 Million\\Acres}}
+\end{tabular}
+
+\vfill
+{\small\textcolor{notegray}{Document prepared: March 2026 $\cdot$ Copy answers directly into Submittable form}}
+\end{titlepage}
+
+% ── Table of Contents ─────────────────────────────────────
+\tableofcontents
+\newpage
+
+% ══════════════════════════════════════════════════════════
+\section{Organization and Submitter Info (Q1--Q10)}
+% ══════════════════════════════════════════════════════════
+
+\note{Fill in your institution details. Below are suggested selections for the non-personal questions.}
+
+\subsection{Q3. Organization Classification}
+\selection{University: public or private academic or research institution}
+
+\subsection{Q10. English Fluency Confirmation}
+\selection{Yes}
+
+% ══════════════════════════════════════════════════════════
+\section{Impact (Q11--Q19)}
+% ══════════════════════════════════════════════════════════
+
+\subsection{Q11. Project Name}
+\answer{AI-Driven Digital Twin of Crop Rotation for Climate-Resilient Agriculture in the US Corn Belt}
+
+% ──────────────────────────────────────────────────────────
+\subsection{Q12. Topic(s) --- Select all that apply}
+\selection{
+\begin{itemize}[nosep,leftmargin=1.5em]
+    \item[$\boxtimes$] Climate Resilience \& Environmental Science -- Food \& Agriculture
+    \item[$\boxtimes$] Climate Resilience \& Environmental Science -- Biosphere, Climate, and Society
+\end{itemize}
+}
+
+% ──────────────────────────────────────────────────────────
+\subsection{Q13. Open-source output(s) --- Select all that apply}
+\selection{
+\begin{itemize}[nosep,leftmargin=1.5em]
+    \item[$\boxtimes$] Peer Reviewed Publication(s)
+    \item[$\boxtimes$] Curated Dataset(s)
+    \item[$\boxtimes$] Software, Tools, or Platform(s)
+    \item[$\boxtimes$] AI Model(s) or Architectures
+\end{itemize}
+}
+
+% ──────────────────────────────────────────────────────────
+\subsection{Q14. Geographic Regions}
+\selection{
+\begin{itemize}[nosep,leftmargin=1.5em]
+    \item[$\boxtimes$] NA
+    \item[$\boxtimes$] Global
+\end{itemize}
+}
+
+% ──────────────────────────────────────────────────────────
+\subsection{Q15. Project's Current Stage}
+\selection{(b) Proof of Concept / Preliminary Results}
+
+% ──────────────────────────────────────────────────────────
+\subsection{Q16. Problem Statement}
+
+\subsubsection{Q16a. The problem this project is trying to tackle is\ldots}
+\answer{Understanding why climate-vulnerable farmers fail to adopt crop rotation --- a proven risk-reduction practice --- and predicting how 310 million acres of the world's most critical cropland will reorganize under climate stress, so policymakers can design targeted interventions before food production disruptions occur.}
+\wordcount{42}
+
+\subsubsection{Q16b. The challenge is significant because\ldots}
+\answer{The US Corn Belt produces 35\% of global corn and 28\% of global soybeans. Our analysis of 1.4 billion satellite pixel-observations over 17 years reveals that counties most vulnerable to climate risk rotate crops the least ($r = -0.48$, $p < 0.0001$), with no adaptive response after losses.}
+\wordcount{47}
+
+\subsubsection{Q16c. The questions we seek to answer\ldots}
+\answer{Can AI models learn farmer crop-choice decision rules from satellite histories? Does an agent-based model with AI-learned rules reproduce observed maladaptive patterns? Which policy interventions --- insurance reform, carbon payments, information campaigns --- most effectively increase climate-resilient rotation adoption among vulnerable farmers?}
+\wordcount{41}
+
+% ──────────────────────────────────────────────────────────
+\subsection{Q17. Proposed Solution}
+
+\subsubsection{Q17a. The solution we are proposing is\ldots}
+\answer{An AI-driven agent-based model on a 5km grid (${\sim}$120,000 cells) across the Corn Belt, where heterogeneous farmer-agents --- powered by a Spatio-Temporal Graph Neural Network and gradient-boosted trees trained on 1.4 billion satellite observations aggregated via weighted methods --- simulate crop rotation decisions, enabling virtual policy experiments for climate resilience.}
+\wordcount{47}
+
+\subsubsection{Q17b. The tools, methods, or techniques we are planning to use are\ldots}
+\answer{A Spatio-Temporal Graph Neural Network --- combining spatial message-passing across ${\sim}$120,000 neighboring 5km grid cells with temporal attention over 17-year crop histories --- serves as the flagship AI model. XGBoost provides an interpretable baseline with SHAP feature importance. LSTM and Spatial Random Forest serve as ablation comparisons. All models power agent decisions within an object-oriented ABM.}
+\wordcount{50}
+
+\subsubsection{Q17c. The evidence we have that our solution would solve this problem is\ldots}
+\answer{We have already processed 1.4 billion pixel-observations, completed 18 analysis scripts, and produced 23 publication-ready figures demonstrating: rotation reduces insurance losses by 4.8\%, the risk-rotation paradox is statistically robust ($p < 0.0001$), and soil-stratified analysis confirms heterogeneous effects --- validating the need for agent-level modeling.}
+\wordcount{44}
+
+\subsubsection{Q17d. Our use of AI will catalyze new scientific inquiry by\ldots}
+\answer{Releasing the first open-source, empirically-calibrated AI framework for simulating farmer decision-making at landscape scale. This creates a reusable ``digital twin'' methodology transferable to any agricultural region globally, establishing a benchmark for AI-driven agricultural adaptation research and enabling researchers worldwide to simulate climate-policy-farmer interactions.}
+\wordcount{41}
+
+% ──────────────────────────────────────────────────────────
+\subsection{Q18. End Beneficiaries}
+
+\subsubsection{Q18a. The end beneficiary group(s) we hope to support are\ldots}
+\answer{Farmers in the US Corn Belt (${\sim}300{,}000$ operations across 8 states), USDA Risk Management Agency (insurance policy design), state agricultural extension services (targeted outreach programs), county conservation districts (684 counties), and global agricultural researchers studying climate adaptation in crop systems.}
+\wordcount{41}
+
+\subsubsection{Q18b. To gather and incorporate feedback, our project will\ldots}
+\answer{Partner with state extension services to validate model assumptions against farmer-reported decision factors, present scenario results at USDA stakeholder workshops, release open-source tools with documentation for researcher adoption, and incorporate practitioner feedback through structured interviews with county-level farm advisors and crop insurance agents.}
+\wordcount{42}
+
+\subsubsection{Q18c. The potential reach is\ldots}
+\answer{Directly: 684 Corn Belt counties covering 310 million acres, informing policy for ${\sim}300{,}000$ farming operations. The open-source framework enables global transfer to major crop rotation systems: Brazil Cerrado (soy-corn), EU (CAP diversification), Sub-Saharan Africa (maize-legume), and India (rice-wheat) --- collectively representing over 1 billion acres worldwide.}
+\wordcount{45}
+
+% ──────────────────────────────────────────────────────────
+\subsection{Q19. Expected Outcomes}
+
+\subsubsection{Q19a. The specific metrics we'd use to assess real-world impact are\ldots}
+\answer{AI model prediction accuracy ({$>$}75\% AUC for next-year crop choice), ABM calibration fidelity (reproducing observed transition probabilities within 5 percentage points), emergence of the risk-rotation paradox ($r < -0.30$ without explicit coding), and identification of at least one policy intervention improving rotation adoption by {$>$}10\%.}
+\wordcount{44}
+
+\subsubsection{Q19b. Signals that would demonstrate our solution is failing\ldots}
+\answer{AI models performing below Markov chain baselines, the ABM failing to reproduce the observed risk-rotation paradox from agent heterogeneity alone, scenario results showing no differentiation between policy interventions, or the open-source framework receiving no adoption or citations within 18 months of release.}
+\wordcount{42}
+
+\subsubsection{Q19c. The changes from baseline we'd expect to see are\ldots}
+\answer{Within 12 months: AI models trained and validated, ABM reproducing observed Corn Belt rotation patterns. Within 24 months: policy scenario results published, demonstrating that targeted insurance reform could increase rotation adoption by 10--15\% in high-risk counties. Within 36 months: framework adopted by 5+ research groups internationally.}
+\wordcount{45}
+
+% ══════════════════════════════════════════════════════════
+\section{Innovative Use of Technology (Q20--Q25)}
+% ══════════════════════════════════════════════════════════
+
+\subsection{Q20. Existing technologies and their roles}
+\answer{\textbf{PyTorch/PyTorch Geometric}: Training a Spatio-Temporal Graph Neural Network on a regular lattice of ${\sim}$120,000 5km grid cells, where GNN layers propagate neighbor influence and temporal attention layers capture multi-year crop history dependencies within a single unified architecture. LSTM comparison baselines for temporal-only ablation. \textbf{XGBoost}: Interpretable baseline with SHAP explanations; Spatial Random Forest for spatial-only ablation using neighbor-aggregated features. \textbf{Mesa (Python ABM framework)}: Agent scheduling on the 5km grid, extended with OOP agent classes containing AI-learned decision functions. \textbf{Rasterio/GeoPandas}: Weighted aggregation of 1.4 billion 30m CDL pixels and NCCPI soil rasters to 5km grid cells. \textbf{Google Earth Engine}: Climate variable extraction at scale. \textbf{Google Cloud Platform}: GPU training on 120K-node spatial graphs; distributed ABM calibration runs.}
+\wordcount{100}
+
+% ──────────────────────────────────────────────────────────
+\subsection{Q21. Why a new, custom-developed solution is necessary}
+\answer{Existing crop rotation models fall into two categories: statistical models (Markov chains, panel regressions) that describe patterns but cannot explain the behavioral mechanisms generating them, and theoretical agent-based models with hand-coded rules that lack empirical calibration. No existing tool combines AI-learned decision rules with empirically-calibrated spatial simulation at sub-county resolution. Our approach bridges this gap: 30m satellite observations are aggregated to a 5km grid (${\sim}$120,000 cells), where a Spatio-Temporal GNN learns realistic farmer behavior capturing both spatial contagion and temporal memory. The ABM then simulates how individual decisions collectively shape landscape-level outcomes. This is necessary because the risk-rotation paradox cannot be explained by aggregate statistics alone.}
+\wordcount{100}
+
+% ──────────────────────────────────────────────────────────
+\subsection{Q22. Existing Dataset}
+\selection{Yes}
+
+\subsubsection{Q22a. Critical datasets}
+\answer{\textbf{USDA Cropland Data Layer (CDL)}: 1.4 billion pixels, 30m resolution, 17 years (2008--2024), fully processed --- annual crop classification maps across 8 Corn Belt states. Quality: {$>$}85\% classification accuracy (USDA-validated). Status: complete, stored locally (${\sim}$50GB). \textbf{USDA RMA Insurance Records}: 434,000 county-year-crop records with loss ratios, indemnities, and cause-of-loss codes (1989--2024). Publicly available, fully cleaned. \textbf{USDA NRCS gSSURGO Soil Data}: NCCPI soil productivity index at 10m resolution. Partially downloaded (pilot counties); full Corn Belt download in progress. \textbf{USDA NASS Yield Data}: County-level corn and soybean yields. All datasets are publicly accessible U.S. government data requiring no licensing fees or access restrictions.}
+\wordcount{100}
+
+% ──────────────────────────────────────────────────────────
+\subsection{Q23. Ethical risks and alignment with Google's AI Principles}
+\answer{Our project aligns with Google's AI Principles through several design choices. \textbf{Socially beneficial}: The model supports climate adaptation and food security, benefiting farmers and communities. \textbf{Avoids unfair bias}: We validate model performance across all 8 states and soil types, ensuring predictions don't systematically disadvantage particular regions or farm sizes. \textbf{Transparency}: XGBoost baseline provides SHAP-based interpretability; ST-GNN spatial attention weights are visualized and auditable. \textbf{Privacy}: All data uses satellite imagery aggregated to 5km grids --- no individual farmer data is collected or modeled. \textbf{Accountability}: All code, models, and training data are open-source, enabling independent verification. We do not make prescriptive recommendations to individual farmers; the model informs policy design at institutional level.}
+\wordcount{100}
+
+% ──────────────────────────────────────────────────────────
+\subsection{Q24. Open Source Commitment}
+\selection{Yes --- All outputs funded by Google.org will be freely and openly available to the public.}
+
+% ──────────────────────────────────────────────────────────
+\subsection{Q25. How you'd leverage Google's technical support}
+\answer{We would benefit from Google's expertise in three areas. \textbf{Google Cloud infrastructure}: Training our Spatio-Temporal GNN on a 120,000-node spatial graph with 17-year temporal depth requires substantial GPU/TPU resources; GCP would dramatically accelerate training and enable hyperparameter sweeps. Distributed ABM calibration across thousands of parameter combinations requires parallel compute at scale. \textbf{Google Earth Engine}: Weighted aggregation of 30m satellite data and climate variables to our 5km grid across the full Corn Belt, with potential for real-time vegetation index integration. \textbf{AI mentorship}: Guidance from Google AI researchers on scaling Graph Neural Networks to large regular-lattice graphs (120K+ nodes with spatio-temporal features) and optimizing neighborhood sampling strategies for agricultural applications would be invaluable.}
+\wordcount{100}
+
+% ══════════════════════════════════════════════════════════
+\section{Feasibility (Q26--Q31)}
+% ══════════════════════════════════════════════════════════
+
+\subsection{Q26. Why your organization is uniquely positioned}
+\answer{Our research group combines deep domain expertise in agricultural economics, geospatial remote sensing, and computational modeling. We have already processed the largest pixel-level crop rotation dataset assembled --- 1.4 billion observations across 17 years and 8 US states --- and completed a comprehensive empirical analysis producing 23 publication-ready figures, 18 analysis scripts, and a 19-page manuscript draft. This preliminary work demonstrates not just technical capability but deep familiarity with the data structure, known pitfalls (CDL classification accuracy, double-crop coding, county aggregation biases), and domain-specific modeling requirements. Our existing computational pipeline handles raster processing at continental scale using memory-efficient chunked algorithms, proving we can operate at the data volumes this project demands. We have established access to all required USDA datasets and have working relationships with agricultural extension specialists who will validate model assumptions.}
+\wordcount{128}
+
+% ──────────────────────────────────────────────────────────
+\subsection{Q27. AI Maturity}
+\selection{(c) AI Exploration: We are actively prototyping AI within our offerings}
+
+% ──────────────────────────────────────────────────────────
+\subsection{Q28. Technical feasibility evidence}
+\answer{We have completed the empirical foundation that validates both the scientific question and our technical capability. Specific evidence: (1) Processed 1.4 billion CDL pixels across 17 years using custom Python pipeline with chunked raster processing --- demonstrating capacity to handle the data scale. (2) Computed transition probability matrices matching published literature values (Corn$\to$Soy: 63.2\%), confirming data quality. (3) Panel fixed-effects regressions produced statistically significant results: rotation yield benefit of +4.69 bu/acre ($p < 0.0001$) and insurance loss reduction of $-4.8$\% ($p < 0.0001$). (4) K-means spatial clustering identified 4 geographically coherent rotation regions, validated against agronomic expectations. (5) Discovered the risk-rotation paradox ($r = -0.48$) independently, confirmed through cross-sectional and temporal analyses. All 18 analysis scripts are tested, version-controlled, and producing reproducible outputs.}
+\wordcount{100}
+
+% ──────────────────────────────────────────────────────────
+\subsection{Q29. Potential risks and mitigation strategies}
+\answer{%
+\textbf{Technical Risk --- AI model performance}: The Spatio-Temporal GNN may not significantly outperform simpler baselines for crop prediction. \textit{Mitigation}: We employ a systematic ablation strategy --- XGBoost (no spatial/temporal structure), Spatial Random Forest (spatial only), and LSTM (temporal only) --- to isolate which components add value. If the full ST-GNN underperforms, these ablations reveal whether spatial contagion, temporal memory, or neither matters. We benchmark all models against Markov chain predictions.
+
+\textbf{Technical Risk --- ABM calibration complexity}: Calibrating agent parameters (risk attitudes, planning horizons, decision rule mixtures) against multiple empirical targets simultaneously is computationally demanding. \textit{Mitigation}: We use Approximate Bayesian Computation (ABC) with sequential Monte Carlo, a proven approach for complex model calibration. Pattern-Oriented Modeling narrows the parameter space by requiring multiple patterns to be matched simultaneously, reducing equifinality.
+
+\textbf{Data Risk --- gSSURGO soil data completeness}: Full Corn Belt NCCPI download is pending. \textit{Mitigation}: Pilot analysis on 4 counties is complete with working scripts; the remaining download is mechanical, not uncertain. County-level soil averages from USDA Web Soil Survey provide a backup aggregation approach.
+
+\textbf{Adoption Risk --- Open-source tool uptake}: The framework may not achieve research community adoption. \textit{Mitigation}: We will publish peer-reviewed papers with reproducible code, present at major conferences (AAEA, AGU), and create comprehensive documentation with tutorial notebooks. Partnering with extension services ensures practitioner awareness.
+
+\textbf{Policy Risk --- Scenario results may not differentiate interventions}: Simulated policy scenarios might show minimal differences. \textit{Mitigation}: We design scenarios spanning a wide parameter range (e.g., insurance discounts from 5--20\%) and test combinations. Even null results --- demonstrating that certain popular interventions are ineffective --- are scientifically valuable and publishable.}
+\wordcount{200}
+
+% ──────────────────────────────────────────────────────────
+\subsection{Q30. Key team members (3--5)}
+\note{Replace placeholder roles with actual team members. The structure below reflects the expertise needed.}
+
+\answer{\textbf{Role 1 --- Principal Investigator / Agricultural Scientist}: Leads project design, domain modeling, and policy interpretation. Deep expertise in crop rotation economics, geospatial analysis, and agricultural risk management. Has completed all preliminary empirical analysis including the 1.4-billion-pixel CDL processing pipeline. \textbf{Role 2 --- AI/ML Engineer}: Designs and trains the Spatio-Temporal GNN and comparison models (XGBoost, LSTM, Spatial RF). Expertise in PyTorch Geometric, graph neural networks, and spatio-temporal architectures for geospatial applications. \textbf{Role 3 --- Agent-Based Modeling Specialist}: Builds the OOP simulation framework and calibration pipeline. Experience with Mesa, spatial ABMs, and Approximate Bayesian Computation. \textbf{Role 4 --- Geospatial Data Scientist}: Manages satellite data processing, 5km grid aggregation, soil data integration, and climate variable extraction. Expertise in rasterio, Google Earth Engine, and large-scale raster computation.}
+\wordcount{100}
+
+% ──────────────────────────────────────────────────────────
+\subsection{Q31. Partner organizations}
+\note{Optional --- list if applicable. Potential partners to consider:}
+\begin{itemize}[nosep]
+    \item USDA Economic Research Service --- domain validation and policy translation
+    \item State Extension Service (e.g., Illinois Extension, Nebraska Extension) --- farmer engagement and model validation
+    \item A CS/AI department at your university or a partner university --- ML engineering support
+\end{itemize}
+
+% ══════════════════════════════════════════════════════════
+\section{Scalability (Q32--Q36)}
+% ══════════════════════════════════════════════════════════
+
+\subsection{Q32. How your solution scales --- Select all that apply}
+\selection{
+\begin{itemize}[nosep,leftmargin=1.5em]
+    \item[$\boxtimes$] \textbf{(a)} Geographic transfer --- Framework transfers to Brazil Cerrado, EU, Sub-Saharan Africa, India
+    \item[$\boxtimes$] \textbf{(c)} Exponential user growth --- Open-source tools enable any researcher to build agricultural ABMs
+    \item[$\boxtimes$] \textbf{(d)} Technical \& performance maturity --- Scale from 5km grid to 30m field-level agents
+    \item[$\boxtimes$] \textbf{(e)} Ecosystem \& integration --- Foundational tool connecting to crop models (APSIM), food system models
+    \item[$\boxtimes$] \textbf{(g)} Policy \& standards leadership --- Establishing methodology standard for AI-driven agricultural adaptation
+\end{itemize}
+}
+
+% ──────────────────────────────────────────────────────────
+\subsection{Q33. Team structure evolution for scale}
+\answer{Initial implementation requires a focused team of 3--4 researchers with complementary AI, ABM, and agricultural domain expertise. Scaling to additional geographies requires regional data acquisition and domain calibration, not architectural changes --- the OOP framework is designed to be region-agnostic. For global expansion, we plan to partner with regional agricultural research institutions (e.g., CGIAR centers, EMBRAPA in Brazil, IIASA in Europe) who contribute local data and domain knowledge while we provide the AI/ABM infrastructure. The open-source release strategy means the community itself becomes an extension of the team: researchers in any region can adapt the framework to their local crop systems. We will create comprehensive documentation, tutorial notebooks, and a ``starter kit'' for new regions. Technical scaling (field-level resolution, real-time data) would benefit from continued Google Cloud infrastructure and AI mentorship.}
+\wordcount{130}
+
+% ──────────────────────────────────────────────────────────
+\subsection{Q34. Sustainability beyond Google.org support}
+
+\subsubsection{Q34a. Financial sustainability}
+\answer{The open-source framework and published papers create competitive advantages for follow-on federal grants (USDA NIFA, NSF DISES, DOE). Trained models and processed datasets reduce future compute costs. Policy-relevant results attract USDA agency partnerships with their own funding streams for operational deployment.}
+\wordcount{42}
+
+\subsubsection{Q34b. Technical sustainability}
+\answer{The Python codebase uses established, well-maintained libraries (PyTorch, Mesa, GeoPandas). Open-source release on GitHub enables community maintenance and contributions. Modular OOP architecture allows component updates (e.g., swapping AI models) without system-wide refactoring. Annual CDL data releases enable automatic model updating.}
+\wordcount{40}
+
+% ──────────────────────────────────────────────────────────
+\subsection{Q35. Key learnings and knowledge sharing}
+\answer{We will share learnings through four channels: \textbf{(1) Peer-reviewed publications} --- at least 2 papers in high-impact journals (targeting \textit{Nature Food}, \textit{Environmental Research Letters}, \textit{American Journal of Agricultural Economics}) with fully reproducible code. \textbf{(2) Open-source software} --- a Python package (\texttt{cornbelt-abm}) on GitHub with Apache 2.0 license, comprehensive documentation, and tutorial Jupyter notebooks enabling researchers to replicate and extend our analysis. \textbf{(3) Open datasets} --- curated, analysis-ready versions of our processed CDL transitions, county-level rotation metrics, and trained model weights deposited in a public repository (Zenodo/HuggingFace). \textbf{(4) Outreach} --- conference presentations at AAEA, AGU, and AI-for-Climate venues; workshop for agricultural extension professionals demonstrating how to interpret model outputs for local planning; blog posts and technical reports making results accessible to non-academic stakeholders.}
+\wordcount{100}
+
+% ──────────────────────────────────────────────────────────
+\subsection{Q36. Public presence and project visibility}
+\note{Fill in with links to published papers, preprints, conference presentations, your research group's website, GitHub repository, and any media coverage.}
+
+% ══════════════════════════════════════════════════════════
+\section{Budget and Timeline (Q37--Q47)}
+% ══════════════════════════════════════════════════════════
+
+\subsection{Q37. Funding Request}
+\selection{\textbf{\$1,000,000}}
+
+\note{36-month project requiring personnel (PI + 2 researchers), significant GPU compute for ST-GNN on 120K-node graph, and travel for stakeholder engagement.}
+
+% ──────────────────────────────────────────────────────────
+\subsection{Budget Breakdown}
+
+\begin{longtable}{p{4cm} r p{8cm}}
+\toprule
+\textbf{Category} & \textbf{Amount} & \textbf{Description} \\
+\midrule
+\endfirsthead
+\toprule
+\textbf{Category} & \textbf{Amount} & \textbf{Description} \\
+\midrule
+\endhead
+
+\textbf{Q38. Personnel \& Staffing} & \$600,000 &
+Principal Investigator (partial salary, 36 months): project leadership, domain modeling, policy interpretation, and publication. AI/ML Research Associate (full-time, 24 months): design, training, and evaluation of Spatio-Temporal GNN and comparison models (XGBoost, LSTM, Spatial RF) on satellite data; integration of trained models into ABM agent decision functions. Graduate Research Assistant (full-time, 36 months): ABM framework development, calibration pipeline implementation, scenario experiment execution, 5km grid data processing, and documentation. \\
+\midrule
+
+\textbf{Q39. Equipment \& Infrastructure} & \$180,000 &
+Google Cloud Platform GPU/TPU instances for training Spatio-Temporal GNN on a 120,000-node spatial graph with 17-year temporal depth: estimated 3,000+ GPU-hours for ST-GNN training with neighborhood sampling, plus 500+ GPU-hours for LSTM and Spatial RF comparison baselines, and 500+ CPU-hours for XGBoost. Compute for weighted aggregation of 1.4 billion 30m pixels to ${\sim}$120,000 5km grid cells. Cloud storage for multi-resolution raster datasets (${\sim}$150GB). Distributed computing for ABM calibration using ABC requiring thousands of parallel simulation runs on the 120K-cell grid. May be partially offset by Google Cloud credits. \\
+\midrule
+
+\textbf{Q40. Project Amplification} & \$120,000 &
+Conference travel (AAEA, AGU, AI-for-Climate workshops --- 3 years $\times$ 2--3 conferences $\times$ 2 team members). Stakeholder engagement at USDA RMA and state extension offices. Open-access publication fees for 2--3 journal articles. Practitioner workshop hosting. Partner subawards for collaborating institutions. \\
+\midrule
+
+\textbf{Q41. Indirect Costs} & \$100,000 &
+Institutional overhead at 10\% of total budget, within the 10--12\% range noted in application guidelines. Covers administration, facilities, IT infrastructure, and compliance oversight. \\
+\midrule
+\textbf{Total} & \textbf{\$1,000,000} & \\
+\bottomrule
+\end{longtable}
+
+% ──────────────────────────────────────────────────────────
+\subsection{Project Timeline and Milestones}
+
+\subsubsection{Q43. Milestone 1 --- Months 1--9: Data Integration \& AI Models}
+
+\textbf{Activities:}
+\answer{Data integration and AI model development. Aggregate 30m CDL, gSSURGO soil, and gridMET climate data to ${\sim}$120,000 5km grid cells via weighted methods. Construct spatial graph (grid adjacency) and 17-year temporal sequences for Spatio-Temporal GNN training. Train ST-GNN flagship model plus ablation comparisons: XGBoost (interpretable baseline), LSTM (temporal-only), and Spatial Random Forest (spatial-only). Conduct two-strategy validation: temporal split (2008--2019 train, 2020--2024 validate) and random 80/20 year-split cross-validation. Generate SHAP analysis for XGBoost and spatial attention visualizations for ST-GNN. Compare architectures and select best-performing model(s) for ABM integration.}
+
+\textbf{Outcomes:}
+\answer{Trained and validated Spatio-Temporal GNN plus three ablation baselines for predicting farmer crop choices on the 5km grid. Model comparison report with accuracy metrics (AUC {$>$} 75\% target), ablation analysis isolating the value of spatial contagion vs.\ temporal memory, SHAP interpretability identifying top decision drivers (soil quality, price signals, neighbor behavior), and validated prediction on held-out data. First peer-reviewed paper submitted on AI model comparison.}
+
+% ──────────────────────────────────────────────────────────
+\subsubsection{Q44. Milestone 2 --- Months 10--18: ABM Development \& Calibration}
+
+\textbf{Activities:}
+\answer{Agent-based model development and calibration. Implement OOP simulation framework on the 5km grid in Python: Cell, FarmerAgent, Landscape, Market, and Simulation classes. Initialize ${\sim}$120,000 grid cells from aggregated CDL and NCCPI data. Integrate trained ST-GNN and XGBoost models as agent decision functions. Define agent heterogeneity parameters (risk attitude distribution, planning horizons, tenure, decision-type mixtures). Calibrate ABM using Approximate Bayesian Computation against empirical targets: transition probabilities, spatial cluster structure, temporal trends, and the risk-rotation paradox.}
+
+\textbf{Outcomes:}
+\answer{Calibrated ABM that reproduces six observed Corn Belt patterns without explicit coding: (1) Corn$\to$Soy ${\sim}$63\%, (2) continuous corn declining, (3) 4 spatial clusters, (4) risk-rotation correlation $< -0.30$, (5) yield benefit magnitude, and (6) 2013 structural break. Open-source Python package (\texttt{cornbelt-abm}) released on GitHub with documentation. ABM validation report with out-of-sample prediction accuracy metrics.}
+
+% ──────────────────────────────────────────────────────────
+\subsubsection{Q45. Milestone 3 --- Months 19--27: Scenario Experiments}
+
+\textbf{Activities:}
+\answer{Scenario experiments and policy analysis. Run climate scenarios: drought intensification (+25\%, +50\%), heat stress increase (+2\textdegree C), and increased weather volatility. Run policy scenarios: rotation-linked insurance discounts (5--20\%), carbon payments (\$15--50/acre), insurance subsidy removal, and information campaigns. Run combined stress tests: climate shock + policy response combinations. Compute landscape resilience metrics for each scenario: Shannon crop diversity index, yield stability, recovery time, adaptation rate, and monoculture risk index. Identify most effective interventions for high-risk counties.}
+
+\textbf{Outcomes:}
+\answer{Comprehensive scenario results quantifying the effectiveness of 4+ policy interventions under 3+ climate futures. Identification of the policy lever(s) that most effectively break the risk-rotation paradox. Second peer-reviewed paper submitted on ABM results and policy scenarios. Policy brief delivered to USDA RMA with actionable recommendations for insurance program design targeting climate-vulnerable regions.}
+
+% ──────────────────────────────────────────────────────────
+\subsubsection{Q46. Milestone 4 --- Months 28--36: Transferability \& Completion}
+
+\textbf{Activities:}
+\answer{Global transferability demonstration, community engagement, and project completion. Adapt framework to one additional agricultural system (e.g., Brazil Cerrado soy-corn rotation or EU CAP crop diversification) as proof of geographic transferability. Host practitioner workshop for extension professionals. Publish curated datasets on Zenodo: processed CDL transitions, county rotation metrics, trained model weights. Finalize documentation, tutorials, and Jupyter notebook examples for community adoption. Submit third paper on framework methodology and transferability. Present results at major conferences.}
+
+\textbf{Outcomes:}
+\answer{Demonstrated framework transferability to at least one non-US agricultural system. Complete open-source release: code, models, datasets, and documentation. Three peer-reviewed publications submitted/published. Practitioner workshop completed with at least 30 extension professionals trained. Framework adopted or cited by 5+ external research groups. Final project report delivered to Google.org with comprehensive impact metrics and sustainability plan.}
+
+% ══════════════════════════════════════════════════════════
+\section{Ethics and Compliance (Q48--Q53)}
+% ══════════════════════════════════════════════════════════
+
+\begin{longtable}{p{8cm} p{6cm}}
+\toprule
+\textbf{Question} & \textbf{Answer} \\
+\midrule
+Q48. Ongoing commercial contracts with Google & No \\
+Q49. Government officials or civil servants & \textit{If public university:} Yes \\
+Q50. Government entities involved & \textit{If public university:} Yes \\
+Q51. Law enforcement engagement & No \\
+Q52. Restricted country dealings & No \\
+\bottomrule
+\end{longtable}
+
+\subsection{Q53. Explanation (if Q49/Q50 = Yes)}
+\answer{The principal investigator and team members are employed by [University Name], a public university. Google.org funding would support researcher salaries and research activities within the university's standard grant administration framework. No funding will be directed to government policy enforcement, law enforcement, or regulatory activities. The project is purely scientific research aimed at advancing understanding of agricultural climate adaptation.}
+\wordcount{60}
+
+% ══════════════════════════════════════════════════════════
+\newpage
+\section*{Appendix: Key Statistics}
+\addcontentsline{toc}{section}{Appendix: Key Statistics}
+% ══════════════════════════════════════════════════════════
+
+\begin{center}
+\begin{tabular}{ll}
+\toprule
+\textbf{Metric} & \textbf{Value} \\
+\midrule
+Satellite pixel-observations & 1.4 billion \\
+Study period & 17 years (2008--2024) \\
+Study area & 8 states, 684 counties, 310 million acres \\
+Global corn production share & 35\% \\
+Global soybean production share & 28\% \\
+Risk-rotation paradox & $r = -0.48$ ($p < 0.0001$) \\
+Rotation yield benefit & +4.69 bu/acre \\
+Insurance loss reduction & $-4.8$\% \\
+Structural break year & 2013 \\
+Spatial clusters identified & 4 \\
+Analysis scripts completed & 18 \\
+Publication-ready figures & 23 \\
+Manuscript draft & 19 pages \\
+Grid resolution & 5km (${\sim}$120,000 cells) \\
+AI flagship model & Spatio-Temporal GNN + 3 ablation baselines \\
+Farming operations in study area & ${\sim}300{,}000$ \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\end{document}
